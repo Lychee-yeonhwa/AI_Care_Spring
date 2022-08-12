@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!-- <html lang="ko" xmlns:th="http://www.thymleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>게시판 작성</title>
+<link rel="stylesheet" th:href="@{/css/style.css}"></link>
+</head>
+<body>
+
+</body>
+</html> -->
+
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout/default">
+
+<!-- index.html 고유 CSS 추가 -->
+<th:block layout:fragment="css">
+</th:block>
+
+<!-- index.html 고유 스크립트 추가 -->
+<th:block layout:fragment="script">
+</th:block>
+
+<div layout:fragment="content">
+
+	<div class="container">
+		<h2>게시판 작성</h2>
+
+		<form id="frm" name="frm" th:method="POST" action="/board/boardInsert"
+			enctype="multipart/form-data">
+
+			<div class="mb-3">
+				<label class="form-label">제목</label> <input type="text"
+					class="form-control" id="title" name="title">
+			</div>
+			<div class="mb-3">
+				<textarea class="form-control" id="contents" name="contents"
+					rows="15"></textarea>
+			</div>
+			<div class="mb-3">
+				<input class="form-control" type="file" id="files" name="files"
+					multiple="multiple" />
+			</div>
+			<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+				<input type="submit" id="submit" value="저장"
+					class="btn btn-secondary" />
+			
+			</div>
+
+		</form>
+	</div>
+
+</div>
+</html>

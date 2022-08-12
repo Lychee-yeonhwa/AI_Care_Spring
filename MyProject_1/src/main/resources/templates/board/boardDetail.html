@@ -1,0 +1,101 @@
+<!-- <!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>게시판 작성</title>
+<link rel="stylesheet" th:href="@{/css/style.css}"></link>
+</head>
+<body>
+
+</html>
+ -->
+ 
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layout/default">
+
+<!-- index.html 고유 CSS 추가 -->
+<th:block layout:fragment="css">
+</th:block>
+
+<!-- index.html 고유 스크립트 추가 -->
+<th:block layout:fragment="script">
+</th:block>
+
+<div layout:fragment="content">
+
+   <div class="container">
+      <h1 style="text-align: center;"th:text="${board.title}"></h1>
+      <hr style="border: solid 1px ;">
+      <form id="frm" name="frm" th:method="POST" th:action="'/board/boardDetail2/'+ ${board.boardIdx}">
+         
+         <table class="board_detail">
+            <colgroup>
+               <col width="15%"/>
+               <col width="35%"/>
+               <col width="15%"/>
+               <col width="35%"/>
+            </colgroup>
+      
+            <tbody>
+               <tr>
+                  <th scope="row"> 글번호</th>
+                  <td th:text="${board.boardIdx}"></td>
+                  <th scope="row">조회수</th>
+                  <td th:text="${board.hitCnt}"></td>
+               </tr>
+               <tr>
+                  <th scope="row">작성자</th>
+                  <td th:text="${board.creatorId}"></td>
+                  <th scope="row">작성일</th>
+                  <td th:text="${board.createDate}"></td>
+               </tr>
+            </tbody>
+         </table>
+         <hr style="border: solid 1px ;">
+         <h5 title="내용" id="contents" name="contents" th:text="${board.contents}"></h5>
+         <input type="hidden" name="boardIdx" th:value="${board.boardIdx}">
+      </form>
+      
+       <div class="file_list">
+         <a th:each="file: ${board.fileList}"
+            th:href="@{/board/downloadBoardFile(idx=${file.idx}, boardIdx=${board.boardIdx})}"
+            th:text="|${file.originalFileName}(${file.fileSize}kb)|">
+         </a>
+         <form th:method="delete" th:each="file: ${board.fileList}" th:action="@{/board/downloadBoardFile(idx=${file.idx}, boardIdx=${board.boardIdx})}">
+            <input type="submit" id="delete_file" th:value="파일삭제">
+         </form>
+      </div>
+      <div class="d-grid gap-3 d-md-flex justify-content-md-end">
+           <input type="button" id="list" value="목록으로" class="btn btn-outline-secondary"/>
+         <input type="button" id="edit" value="수정하기" class="btn btn-outline-primary"/>
+         <input type="button" id="delete" value="삭제하기" class="btn btn-outline-danger"/>
+      </div>
+         
+   </div>
+   <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+           integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
+           crossorigin="anonymous">
+   </script>
+   
+   <script type="text/javascript">
+      $(document).ready(function(){
+         $("#list").on("click",function(){
+            location.href="/board/boardList"
+         });
+         
+         $("#edit").on("click",function(){
+             location.href="/board/boardDetail2/"+$("input:hidden[name=boardIdx]").val();
+          });
+          
+         
+         $("#delete").on("click",function(){
+            var frm= $("#frm")[0];
+            frm.action="/board/boardDelete/"+$("input:hidden[name=boardIdx]").val();
+            frm.submit()
+         });
+      });
+   </script>
+   
+</div>
+</html>

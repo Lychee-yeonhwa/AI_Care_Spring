@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layout/default">
+
+<!-- index.html 고유 CSS 추가 -->
+<th:block layout:fragment="css">
+<link rel="stylesheet" th:href="@{/css/style.css}">
+</th:block>
+
+<!-- index.html 고유 스크립트 추가 -->
+<th:block layout:fragment="script">
+</th:block>
+
+<div layout:fragment="content">
+
+<div class="score-container container py-5 px-4">
+		<h3 class="bg-default text-center mb-5 p-2">퀴즈 결과 순위</h3>
+		
+		<table class="bg-dark text-light">
+			<tr>
+				<th>Name</th>
+				<th>Score</th>
+			</tr>
+			<tr th:each="score : ${sList}">
+				<td th:text="${score.username}"></td>
+				<td th:text="${score.totalCorrect}"></td>
+			</tr>
+		</table>
+	</div>
+	
+</div>
+</html>

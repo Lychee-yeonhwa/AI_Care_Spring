@@ -1,0 +1,29 @@
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout/default">
+
+<!-- index.html 고유 CSS 추가 -->
+<th:block layout:fragment="css">
+<link rel="stylesheet" th:href="@{/css/style.css}">
+</th:block>
+
+<!-- index.html 고유 스크립트 추가 -->
+<th:block layout:fragment="script">
+</th:block>
+
+<div layout:fragment="content">
+	<div class="quizcontainer">
+		<div class="image-box">
+			<img th:src="@{/images/exam.svg}" alt="image">
+		</div>
+		<div class="text-box">
+			<h1 class="mb-5 text-center">Quiz App</h1>
+			<form class="card bg-dark py-5 px-4" action="/quiz/quiz" method="POST">
+				<p>이름을 입력해주세요.</p>
+				<input type="text" name="username" />
+				<p class="text-danger warning" th:if="${warning}" th:text="${warning}"></p>
+				<button type="submit" class="btn btn-outline-info">퀴즈 시작</button>
+		</div>
+	</div>
+	</div>
+</html>

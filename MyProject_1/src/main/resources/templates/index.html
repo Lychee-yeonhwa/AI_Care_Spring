@@ -1,0 +1,255 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<meta name="description" content="" />
+<meta name="author" content="" />
+<title>AI care</title>
+<!-- Favicon-->
+<link rel="icon" type="image/x-icon" href="resources/assets/favicon.ico" />
+<!-- Font Awesome icons (free version)-->
+<script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js"
+	crossorigin="anonymous"></script>
+<!-- Google fonts-->
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
+	rel="stylesheet" type="text/css" />
+<link
+	href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700"
+	rel="stylesheet" type="text/css" />
+<!-- Core theme CSS (includes Bootstrap)-->
+<link
+	href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+	rel="stylesheet" id="bootstrap-css">
+<script
+	src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script
+	src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link href="resources/css/styles.css" rel="stylesheet" />
+
+
+</head>
+<body id="page-top">
+	<nav class="navbar navbar-expand">
+		<a href="/" class="navbar-brand"> <img
+			src="resources/assets/img/navar-logo.png" alt="..." />
+		</a>
+		<button type="button" class="navbar-toggler" data-toggle="collapse"
+			data-target="#navbarSupportedContent"
+			aria-controls="navbarSupportedContent" aria-expanded="false">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item"><a class="nav-link" href="#portfolio">Learn</a></li>
+			<li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
+				<li class="nav-item dropdown">
+				<a href="#"
+					class="nav-link dropdown-toggle active" id="navbarDropdown"
+					role="button" data-toggle="dropdown" aria-haspopup="true"
+					aria-expanded="false">Project</a>
+					
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<a href="#services" class="dropdown-item">Information</a> 
+						<a href="/game/posegame"
+							class="dropdown-item">Pose Game</a> <a href="/game/quizgame"
+							class="dropdown-item">Quiz Game</a>
+							
+					</div></li>
+				
+				<a href="/quiz/quizmain" class="nav-item active nav-link">Quiz</a>
+				<a href="/quiz/score" class="nav-item active nav-link">Quiz Rank</a>
+				<a href="/board/boardList" class="nav item active nav-link">Notice</a>
+				<a href="/user/userList" class="nav item active nav-link">Admin</a>
+		</ul>
+
+		<form class="d-flex">
+
+			<button class="btn btn-outline-info" type="button">
+				<a th:href="@{/login/login}">로그인</a>
+			</button>
+			&nbsp;
+			<button class="btn btn-outline-info" type="button">
+				<a th:href="@{/login/logout}">로그아웃</a>
+			</button>
+			&nbsp;
+			<button class="btn btn-outline-info" type="button">
+				<a href="/user/userMake">회원가입</a>
+			</button>
+		</form>
+		</div>
+	</nav>
+	<!-- Masthead-->
+	<header class="masthead">
+		<div class="container">
+			<div class="masthead-subheading">Hello!</div>
+			<div class="masthead-heading text-uppercase">Be healthy</div>
+		</div>
+	</header>
+
+	<!-- Portfolio Grid-->
+	<section class="page-section bg-light" id="portfolio">
+		<div class="container">
+			<div class="text-center">
+				<h2 class="section-heading text-uppercase">exercise</h2>
+				<h3 class="section-subheading text-muted">동영상으로 따라하는 3단계 운동법</h3>
+			</div>
+			<div class="row">
+				<div class="col-lg-4 col-sm-6 mb-4">
+					<!-- Portfolio item 1-->
+					<div class="portfolio-item"
+						OnClick="location.href ='https://youtu.be/m0tnbnuPiRw'">
+						<a class="portfolio-link" data-bs-toggle="modal"
+							href="#portfolioModal1">
+							<div class="portfolio-hover">
+								<div class="portfolio-hover-content">
+									<i class="fas fa-plus fa-3x"></i>
+								</div>
+							</div> <img class="img-fluid"
+							src="resources/assets/img/portfolio/1.jpeg" alt="..." />
+						</a>
+						<div class="portfolio-caption">
+							<div class="portfolio-caption-heading">간단한 기초운동</div>
+							<div class="portfolio-caption-subheading text-muted">1단계</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-sm-6 mb-4">
+					<!-- Portfolio item 2-->
+					<div class="portfolio-item"
+						OnClick="location.href ='https://youtu.be/stAuliTbj9E'">
+						<a class="portfolio-link" data-bs-toggle="modal"
+							href="#portfolioModal2">
+							<div class="portfolio-hover">
+								<div class="portfolio-hover-content">
+									<i class="fas fa-plus fa-3x"></i>
+								</div>
+							</div> <img class="img-fluid"
+							src="resources/assets/img/portfolio/2.jpg" alt="..." />
+						</a>
+						<div class="portfolio-caption">
+							<div class="portfolio-caption-heading">유산소 운동</div>
+							<div class="portfolio-caption-subheading text-muted">2단계</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-sm-6 mb-4">
+					<!-- Portfolio item 3-->
+					<div class="portfolio-item"
+						OnClick="location.href ='https://youtu.be/lSi_j3vcgcE'">
+						<a class="portfolio-link" data-bs-toggle="modal"
+							href="#portfolioModal3">
+							<div class="portfolio-hover">
+								<div class="portfolio-hover-content">
+									<i class="fas fa-plus fa-3x"></i>
+								</div>
+							</div> <img class="img-fluid"
+							src="resources/assets/img/portfolio/3.jpg" alt="..." />
+						</a>
+						<div class="portfolio-caption">
+							<div class="portfolio-caption-heading">근력 운동</div>
+							<div class="portfolio-caption-subheading text-muted">3단계</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-sm-6 mb-4 mb-lg-0"></div>
+			</div>
+	</section>
+
+	<!-- Team-->
+	<section class="page-section bg-light" id="team">
+		<div class="container">
+			<div class="text-center">
+				<h2 class="section-heading text-uppercase">Our Team</h2>
+				<h3 class="section-subheading text-muted">팀원 & 수행한 역할</h3>
+			</div>
+			<div class="row">
+				<div class="col-lg-4">
+					<div class="team-member">
+						<img class="mx-auto rounded-circle"
+							src="resources/assets/img/team/team1.png" alt="..." />
+						<h4>김연화</h4>
+						<p class="text-muted"></p>
+					</div>
+
+				</div>
+				<div class="col-lg-4">
+					<div class="team-member">
+						<img class="mx-auto rounded-circle"
+							src="resources/assets/img/team/team2.jpg" alt="..." />
+						<h4>김민경</h4>
+						<p class="text-muted"></p>
+
+					</div>
+				</div>
+				<div class="col-lg-4">
+					<div class="team-member">
+						<img class="mx-auto rounded-circle"
+							src="resources/assets/img/team/team3.png" alt="..." />
+						<h4>김하경</h4>
+						<p class="text-muted"></p>
+
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-8 mx-auto text-center">
+					<p class="large text-muted">2021년 3학년 1학기 IoT서버프레임워크 최종 프로젝트</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	 <!-- Services-->
+        <section class="page-section" id="services">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Project Infomation</h2>
+                    <h3 class="section-subheading text-muted">개인맞춤형 AI 치매 예방 프로그램</h3>
+                </div>
+                <div class="row text-center">
+                    <div class="col-md-15">
+                        <p class="text-muted">고령화 사회로 인한 치매환자가 증가하면서 2020년 기준 국내 치매환자는 65세 이상 노인 인구의 약 10.3% 인 83만명에 이르렀습니다. <br>2024년에는 100만명, 2039년 200만명, 2050년 270만~300만명에 이를 것으로 예측됩니다. 
+                        <br>특히 치매 유병률은 나이가 먹을수록 높아짐을 확인할 수 있습니다. 결국 ‘노화’가 치매의 주범이며 모두가 치매에서로부터 자유로워 질 수 없음을 의미합니다. 이제 우리 모두는 치매 환자를 사회 일원으로 받아들이고 공존할 수 있는 방안을 모색해야 합니다.
+                  <p>본 프로그램은 비약물 치료를 활용한 치매 예방 프로그램입니다. <br>치매예방 프로그램의 효과성을 더 높이기 위해 신체적 자극뿐만아닌 전반적인 인지기능의  자극을 주기위한 통합적 치매 예방 치료를 구현하려는 목적으로 <br> 웹캠을 통한 로그인과 포즈게임,인지 기능 분야별로 나눈 퀴즈 풀이 게임을 실행하며 그 결과를 바탕으로 사용자의 취약점을 분석하여 제공합니다.
+                  <br>개인 맞춤형 AI치매 예방 프로그램은 시공간을 초월한 이용의 용이성, 지속적 , 사용성 그리고 경제성을 통하여 오프라인으로 운영되고 있는 치매예방프로그램의 한계점을 보완함으로써 노인의 인지능력을 증진시키고 치매를 예방하는 데 유용할 것입니다.
+                  
+                   
+                        
+                        </p>
+                    </div>
+                    <div class="col-md-4">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+	<!-- Footer-->
+	<footer class="footer py-4">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-lg-4 text-lg-start">Copyright &copy; AI CARE
+					2021</div>
+				<div class="col-lg-4 text-lg-end"></div>
+			</div>
+		</div>
+	</footer>
+
+
+	<!-- Bootstrap core JS-->
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
+	<!-- Core theme JS-->
+	<script src="resources/js/scripts.js"></script>
+	<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+	<!-- * *                               SB Forms JS                               * *-->
+	<!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+	<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+	<script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+<-- Always remember to call the above files first before calling the bootstrap.min.js file -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout/default">
+
+<!-- index.html 고유 CSS 추가 -->
+<th:block layout:fragment="css">
+	<link rel="stylesheet" th:href="@{/css/boardList.css}">
+</th:block>
+
+<!-- index.html 고유 스크립트 추가 -->
+<th:block layout:fragment="script">
+<link
+		href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+		rel="stylesheet" id="bootstrap-css">
+	<script
+		src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+</th:block>
+
+<div layout:fragment="content">
+	<div class="container">
+		<h2>사용자 리스트</h2>
+		<table class="table table-bordered">
+			<colgroup>
+				<col width="10%" />
+				<col width="*" />
+				<col width="10%" />
+				<col width="*" />
+				<col width="*" />
+				<col width="20%" />
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">아이디</th>
+					<th scope="col">패스워드</th>
+					<th scope="col">이름</th>
+					<th scope="col">이메일</th>
+					<th scope="col">권한</th>
+					<th scope="col">가입일</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<tr th:if="${#lists.size(list)} > 0" th:each="vo : ${list}">
+					<td><a href="/user/userDetail/" th:attrappend="href=${vo.id}"
+						th:text="${vo.id}"></a></td>
+					<td th:text="${vo.pw}"></td>
+					<td th:text="${vo.name}"></td>
+					<td th:text="${vo.email}"></td>
+					<td th:text="${vo.role}"></td>
+					<td th:text="${vo.joinDate}"></td>
+				</tr>
+				<tr th:unless="${#lists.size(list)} > 0">
+					<td colspan="5">조회된 결과가 없습니다.</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="d-flex justify-content-between">
+			<button type="button" class="btn btn-outline-info">
+				<a href="/user/userInsert">사용자 추가</a>
+			</button>
+			<form class="d-flex" action="/board/search" method="GET">
+				<input class="form-control me-2" type="search" placeholder="검색"
+					name="keyword">
+				<button class="btn btn-outline-info" type="submit">검색</button>
+			</form>
+		</div>
+
+	</div>
+	<div>
+		<nav aria-label="Page navigation example">
+			<ul class="pagination">
+				<li class="page-item"><a class="page-link" href="#">Previous</a></li>
+				<li class="page-item"><a class="page-link" href="#">1</a></li>
+				<li class="page-item"><a class="page-link" href="#">2</a></li>
+				<li class="page-item"><a class="page-link" href="#">3</a></li>
+				<li class="page-item"><a class="page-link" href="#">Next</a></li>
+			</ul>
+		</nav>
+	</div>
+
+
+
+</div>
+</html>
